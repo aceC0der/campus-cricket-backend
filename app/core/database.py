@@ -7,7 +7,6 @@ engine = create_async_engine(Config.get_database_url())
 
 SessionLocal = async_sessionmaker(
     bind=engine,
-    autocommit=False,
     expire_on_commit=False,
     class_=AsyncSession
 )
