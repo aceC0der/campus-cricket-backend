@@ -10,6 +10,15 @@ class Config:
 
     @classmethod
     def get_database_url(cls) -> str:
+        """
+        Retrieve the configured database URL from the environment.
+        
+        Returns:
+            database_url (str): The database connection URL.
+        
+        Raises:
+            ValueError: If the `DATABASE_URL` is not set or is empty.
+        """
         if not cls.DATABASE_URL:
             raise ValueError("Database url is not set in .dev.env")
 
